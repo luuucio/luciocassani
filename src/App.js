@@ -10,7 +10,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar pages={this.pages} />
+        <Navbar pages={this.pages} title="Lucio Cassani" />
       </div>
     );
   }
