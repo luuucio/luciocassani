@@ -8,7 +8,6 @@ const styles = theme => ({
 
 const NavbarMenuLarge = props => {
   const { pages, classes } = props;
-  console.log(props);
   return (
     <Hidden only={["xs"]}>
       {Object.keys(pages).map(page => (

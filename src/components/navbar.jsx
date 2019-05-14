@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { AppBar, Hidden, Toolbar, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import NavbarMenuLarge from "./navbarMenuLarge";
+import NavbarMenuSmall from "./navbarMenuSmall";
 
 const styles = theme => ({
   title: {
@@ -26,6 +27,11 @@ class Navbar extends Component {
             {/* All screen sizes except XS */}
             <Hidden only="xs">
               <NavbarMenuLarge pages={this.props.pages} />
+            </Hidden>
+
+            {/* Only XS size */}
+            <Hidden only={["xl", "lg", "md", "sm"]}>
+              <NavbarMenuSmall />
             </Hidden>
           </Toolbar>
         </AppBar>
