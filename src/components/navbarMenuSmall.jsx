@@ -1,21 +1,57 @@
-import React from "react";
+import React, { Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import { IconButton, SwipeableDrawer } from "@material-ui/core";
+import {
+  IconButton,
+  SwipeableDrawer,
+  List,
+  ListItem,
+  ListItemText
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
-  button: {}
+  drawer: {
+    paddingTop: 80
+  }
 });
 
-const NavbarMenuSmall = props => {
-  return (
-    <div>
-      <IconButton color="inherit">
-        <MenuIcon />
-      </IconButton>
-      <SwipeableDrawer open={false} />
-    </div>
-  );
-};
+class NavbarMenuSmall extends Component {
+  state = {
+    isDrawerOpen: false
+  };
 
+  handleDrawer = state => {
+    this.setState({ isDrawerOpen: state });
+  };
+
+  render() {
+    const { isDrawerOpen } = this.state;
+    const { pages, classes } = this.props;
+    return (
+      <div>
+        <IconButton
+          color="inherit"
+          onClick={() => this.handleDrawer(!isDrawerOpen)}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <SwipeableDrawer
+          open={isDrawerOpen}
+          onClose={() => this.handleDrawer(false)}
+          onOpen={() => this.handleDrawer(true)}
+          anchor="right"
+        >
+          <List className={classes.drawer}>
+            {Object.keys(pages).map(page => (
+              <ListItem key={page} component="a" href={`#${page}`}>
+                <ListItemText>{page}</ListItemText>
+              </ListItem>
+            ))}
+          </List>
+        </SwipeableDrawer>
+      </div>
+    );
+  }
+}
 export default withStyles(styles)(NavbarMenuSmall);

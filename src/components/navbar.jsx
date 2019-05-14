@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { AppBar, Hidden, Toolbar, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import NavbarMenuLarge from "./navbarMenuLarge";
@@ -7,37 +7,36 @@ import NavbarMenuSmall from "./navbarMenuSmall";
 const styles = theme => ({
   title: {
     flex: 1
+  },
+  appbar: {
+    zIndex: theme.zIndex.modal + 1
   }
 });
 
-class Navbar extends Component {
-  state = {
-    isDrawerOpen: false
-  };
-  render() {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <AppBar>
-          <Toolbar>
-            <Typography className={classes.title} variant="h6" color="inherit">
-              {this.props.title}
-            </Typography>
+const Navbar = props => {
+  const { classes } = props;
+  console.log(classes);
+  return (
+    <React.Fragment>
+      <AppBar position="fixed" className={classes.appbar}>
+        <Toolbar>
+          <Typography className={classes.title} variant="h6" color="inherit">
+            {props.title}
+          </Typography>
 
-            {/* All screen sizes except XS */}
-            <Hidden only="xs">
-              <NavbarMenuLarge pages={this.props.pages} />
-            </Hidden>
+          {/* All screen sizes except XS */}
+          <Hidden only="xs">
+            <NavbarMenuLarge pages={props.pages} />
+          </Hidden>
 
-            {/* Only XS size */}
-            <Hidden only={["xl", "lg", "md", "sm"]}>
-              <NavbarMenuSmall />
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-      </React.Fragment>
-    );
-  }
-}
+          {/* Only XS size */}
+          <Hidden only={["xl", "lg", "md", "sm"]}>
+            <NavbarMenuSmall pages={props.pages} />
+          </Hidden>
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
+  );
+};
 
 export default withStyles(styles)(Navbar);

@@ -5,7 +5,7 @@ import Home from "./components/home";
 
 export default class App extends Component {
   pages = {
-    home: "Home"
+    Home: "Home"
   };
   render() {
     return (
