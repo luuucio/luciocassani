@@ -11,6 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <Navbar pages={this.pages} title="Lucio Cassani" />
+        <Home />
       </div>
     );
   }

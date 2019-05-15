@@ -15,7 +15,6 @@ const styles = theme => ({
 
 const Navbar = props => {
   const { classes } = props;
-  console.log(classes);
   return (
     <React.Fragment>
       <AppBar position="fixed" className={classes.appbar}>

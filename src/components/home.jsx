@@ -32,7 +32,7 @@ const Home = props => {
             className={classes.text}
             align="center"
           >
-            Software developer
+            Home
           </Typography>
         </Grid>
         <Hidden only={["xs", "sm"]}>
