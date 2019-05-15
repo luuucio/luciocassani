@@ -25,8 +25,8 @@ const styles = theme => ({
 const Home = props => {
   const { classes } = props;
   return (
-    <div className={classes.background}>
-      <Zoom in timeout={800}>
+    <div className={classes.background} id="Home">
+      <Zoom in timeout={900}>
         <Typography variant="h3" className={classes.headline}>
           Software developer
         </Typography>
