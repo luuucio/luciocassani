@@ -1,7 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Image from "../resources/mouse.jpg";
-import { Typography } from "@material-ui/core";
+import { Typography, Zoom } from "@material-ui/core";
 
 const styles = theme => ({
   background: {
@@ -26,9 +26,11 @@ const Home = props => {
   const { classes } = props;
   return (
     <div className={classes.background}>
-      <Typography variant="h3" className={classes.headline}>
-        Software developer
-      </Typography>
+      <Zoom in timeout={800}>
+        <Typography variant="h3" className={classes.headline}>
+          Software developer
+        </Typography>
+      </Zoom>
     </div>
   );
 };
