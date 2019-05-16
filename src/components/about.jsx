@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Grid, Card, CardContent, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import AboutCard from "./aboutCard";
 
 const styles = theme => ({
   background: {
@@ -10,17 +11,40 @@ const styles = theme => ({
   grid: {
     display: "flex",
     width: "80vw",
-    //height: "50vh",
     justifyContent: "center"
   }
 });
 
-const cards = {
-  M: "MongoDB",
-  E: "Express",
-  R: "React",
-  N: "Node"
-};
+const cards = [
+  {
+    logo: "M",
+    name: "MongoDB",
+    link: "https://www.mongodb.com/",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+  },
+  {
+    logo: "E",
+    name: "Express",
+    link: "https://expressjs.com/",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+  },
+  {
+    logo: "R",
+    name: "React",
+    link: "https://reactjs.org/",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+  },
+  {
+    logo: "N",
+    name: "Node",
+    link: "https://nodejs.org/en/",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+  }
+];
 
 const About = props => {
   const { classes } = props;
@@ -35,23 +59,9 @@ const About = props => {
         }}
       >
         <Grid container spacing={24} color="inherit" className={classes.grid}>
-          {Object.keys(cards).map(card => (
-            <Grid key={card} item sm={3} xs={6}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h4" align="center">
-                    {card}
-                  </Typography>
-                  <Typography
-                    component="a"
-                    href="https://www.mongodb.com/"
-                    align="center"
-                    target="_"
-                  >
-                    {cards[card]}
-                  </Typography>
-                </CardContent>
-              </Card>
+          {cards.map(item => (
+            <Grid key={item["logo"]} item sm={3} xs={6}>
+              <AboutCard card={item} />
             </Grid>
           ))}
         </Grid>
