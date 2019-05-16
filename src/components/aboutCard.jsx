@@ -6,24 +6,15 @@ import {
   CardContent,
   Collapse,
   IconButton,
+  Link,
   Typography
 } from "@material-ui/core";
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const styles = theme => ({
-  card: {
-    "&:hover": {
-      backgroundColor: "red",
-      cursor: "pointer"
-    }
-  },
   actions: {
-    display: "flex",
-    alignItems: "flex-end"
+    marginLeft: "37%"
   }
 });
 
@@ -39,7 +30,7 @@ class AboutCard extends Component {
   };
 
   render() {
-    const { classes, card, ...rest } = this.props;
+    const { classes, card } = this.props;
     return (
       <div>
         <Card>
@@ -47,28 +38,22 @@ class AboutCard extends Component {
             <Typography variant="h4" align="center">
               {card["logo"]}
             </Typography>
-            <Typography
-              className={classes.card}
-              component="a"
-              variant="body2"
-              href={card["link"]}
-              align="center"
-              target="_"
-            >
-              {card["name"]}
+            <Typography align="center">
+              <Link variant="subtitle1" href={card["link"]} target="_blank">
+                {card["name"]}
+              </Link>
             </Typography>
           </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing={true}>
-            <IconButton
-              onClick={this.handleExpandClick}
-              aria-expanded={this.state.isCardOpen}
-              aria-label="Show more"
-              display="flex"
-              alignitem="flex-end"
-              align="right"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
+          <CardActions disableActionSpacing={true}>
+            <div className={classes.actions}>
+              <IconButton
+                onClick={this.handleExpandClick}
+                aria-expanded={this.state.isCardOpen}
+                aria-label="Show more"
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </div>
           </CardActions>
           <Collapse in={this.state.isCardOpen} timeout="auto" unmountOnExit>
             <CardContent>
