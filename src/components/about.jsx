@@ -11,7 +11,8 @@ const styles = theme => ({
   grid: {
     display: "flex",
     width: "80vw",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: "10em"
   }
 });
 
@@ -21,28 +22,28 @@ const cards = [
     name: "MongoDB",
     link: "https://www.mongodb.com/",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+      "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need"
   },
   {
     logo: "E",
     name: "Express",
     link: "https://expressjs.com/",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+      "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications"
   },
   {
     logo: "R",
     name: "React",
     link: "https://reactjs.org/",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+      "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes."
   },
   {
     logo: "N",
-    name: "Node",
+    name: "Node.js",
     link: "https://nodejs.org/en/",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, modi."
+      "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications"
   }
 ];
 
@@ -54,8 +55,7 @@ const About = props => {
         style={{
           height: "100vh",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
+          justifyContent: "center"
         }}
       >
         <Grid container spacing={24} color="inherit" className={classes.grid}>
