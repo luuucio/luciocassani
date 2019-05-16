@@ -4,8 +4,14 @@ import { Grid, Card, CardContent, Typography } from "@material-ui/core";
 
 const styles = theme => ({
   background: {
-    height: "93vh",
-    backgroundColor: "grey"
+    height: "100vh",
+    backgroundColor: "#181818"
+  },
+  grid: {
+    display: "flex",
+    width: "80vw",
+    //height: "50vh",
+    justifyContent: "center"
   }
 });
 
@@ -20,27 +26,36 @@ const About = props => {
   const { classes } = props;
   return (
     <div className={classes.background} id="About">
-      <Grid container spacing={24} color="inherit">
-        {Object.keys(cards).map(card => (
-          <Grid key={card} item sm={3} xs={6}>
-            <Card>
-              <CardContent>
-                <Typography variant="h4" align="center">
-                  {card}
-                </Typography>
-                <Typography
-                  component="a"
-                  href="https://www.mongodb.com/"
-                  align="center"
-                  target="_"
-                >
-                  {cards[card]}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <Grid container spacing={24} color="inherit" className={classes.grid}>
+          {Object.keys(cards).map(card => (
+            <Grid key={card} item sm={3} xs={6}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h4" align="center">
+                    {card}
+                  </Typography>
+                  <Typography
+                    component="a"
+                    href="https://www.mongodb.com/"
+                    align="center"
+                    target="_"
+                  >
+                    {cards[card]}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </div>
   );
 };
