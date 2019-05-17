@@ -6,7 +6,7 @@ import AboutCard from "./aboutCard";
 const styles = theme => ({
   background: {
     height: "100vh",
-    backgroundColor: "#181818"
+    backgroundColor: "rgb(0, 0, 50)"
   },
   grid: {
     display: "flex",

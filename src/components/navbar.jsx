@@ -6,10 +6,12 @@ import NavbarMenuSmall from "./navbarMenuSmall";
 
 const styles = theme => ({
   title: {
-    flex: 1
+    flex: 1,
+    marginLeft: "5em"
   },
   appbar: {
-    zIndex: theme.zIndex.modal + 1
+    zIndex: theme.zIndex.modal + 1,
+    backgroundColor: "rgb(0,0,0)"
   }
 });
 

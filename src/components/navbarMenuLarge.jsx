@@ -21,6 +21,7 @@ const NavbarMenuLarge = props => {
           {page}
         </Button>
       ))}
+      <span style={{ marginRight: "5em" }} />
     </Hidden>
   );
 };

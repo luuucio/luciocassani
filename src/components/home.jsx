@@ -14,7 +14,7 @@ const styles = theme => ({
   },
   headline: {
     position: "absolute",
-    top: "70%",
+    top: "75%",
     width: "100%",
     left: 0,
     color: "white",
