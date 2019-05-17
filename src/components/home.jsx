@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Image from "../resources/mouse.jpg";
 import { Typography, Zoom } from "@material-ui/core";
@@ -21,18 +21,30 @@ const styles = theme => ({
     textAlign: "center"
   }
 });
-
-const Home = props => {
-  const { classes } = props;
-  return (
-    <div className={classes.background} id="Home">
-      <Zoom in timeout={900}>
-        <Typography variant="h3" className={classes.headline}>
-          Software developer
-        </Typography>
-      </Zoom>
-    </div>
-  );
-};
+class Home extends Component {
+  state = {
+    showText: false
+  };
+  componentDidMount() {
+    this.setState({
+      showText: true
+    });
+  }
+  render() {
+    const { classes } = this.props;
+    const { showText } = this.state;
+    return (
+      <div className={classes.background} id="Home">
+        {showText && (
+          <Zoom in timeout={2000}>
+            <Typography variant="h3" className={classes.headline}>
+              Software developer
+            </Typography>
+          </Zoom>
+        )}
+      </div>
+    );
+  }
+}
 
 export default withStyles(styles)(Home);
