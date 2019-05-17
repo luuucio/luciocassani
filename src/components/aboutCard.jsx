@@ -29,11 +29,20 @@ class AboutCard extends Component {
     });
   };
 
+  handleMouseInCard = param => {
+    this.setState({
+      isCardOpen: param
+    });
+  };
+
   render() {
     const { classes, card } = this.props;
     return (
       <div>
-        <Card>
+        <Card
+          onMouseEnter={() => this.handleMouseInCard(true)}
+          onMouseLeave={() => this.handleMouseInCard(false)}
+        >
           <CardContent>
             <Typography variant="h4" align="center">
               {card["logo"]}
@@ -47,12 +56,9 @@ class AboutCard extends Component {
           <CardActions disableActionSpacing={true}>
             <div className={classes.actions}>
               <IconButton
-                onClick={this.handleExpandClick}
                 aria-expanded={this.state.isCardOpen}
                 aria-label="Show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
+              />
             </div>
           </CardActions>
           <Collapse in={this.state.isCardOpen} timeout="auto" unmountOnExit>
