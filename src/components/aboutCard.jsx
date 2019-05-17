@@ -14,7 +14,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const styles = theme => ({
   actions: {
-    marginLeft: "37%"
+    marginLeft: "40%"
   }
 });
 
