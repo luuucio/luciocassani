@@ -14,7 +14,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const styles = theme => ({
   actions: {
-    marginLeft: "40%"
+    display: "flex",
+    flex: 1,
+    justifyContent: "flex-end"
   }
 });
 
@@ -42,15 +44,14 @@ class AboutCard extends Component {
         <Card
           onMouseEnter={() => this.handleMouseInCard(true)}
           onMouseLeave={() => this.handleMouseInCard(false)}
+          onClick={this.handleExpandClick}
         >
           <CardContent>
             <Typography variant="h4" align="center">
               {card["logo"]}
             </Typography>
-            <Typography align="center">
-              <Link variant="subtitle1" href={card["link"]} target="_blank">
-                {card["name"]}
-              </Link>
+            <Typography align="center" variant="subtitle1">
+              {card["name"]}
             </Typography>
           </CardContent>
           <CardActions disableActionSpacing={true}>
@@ -59,11 +60,17 @@ class AboutCard extends Component {
                 aria-expanded={this.state.isCardOpen}
                 aria-label="Show more"
               />
+              <ExpandMoreIcon />
             </div>
           </CardActions>
           <Collapse in={this.state.isCardOpen} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>{card.description}</Typography>
+              <Typography paragraph>
+                <Link href={card["link"]} target="_blank">
+                  Learn more
+                </Link>
+              </Typography>
             </CardContent>
           </Collapse>
         </Card>

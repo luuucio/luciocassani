@@ -5,7 +5,7 @@ import AboutCard from "./aboutCard";
 
 const styles = theme => ({
   background: {
-    height: "100vh",
+    minHeight: "100vh",
     backgroundColor: "rgb(0, 0, 50)"
   },
   grid: {
@@ -54,8 +54,9 @@ const About = props => {
     <div className={classes.background} id="About">
       <div
         style={{
-          height: "100vh",
+          minHeight: "100vh",
           display: "flex",
+          flex: 1,
           justifyContent: "center"
         }}
       >

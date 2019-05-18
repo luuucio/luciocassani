@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography, Grid, IconButton, Link } from "@material-ui/core";
+import { Typography, Grid, IconButton } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -80,23 +80,3 @@ const Contact = props => {
 };
 
 export default withStyles(styles)(Contact);
-
-{
-  /* <Grid item xs={3} sm={1} className={classes.gridIcons}>
-<Typography variant="h3" color="inherit">
-  <FontAwesomeIcon icon={faEnvelope} />
-</Typography>
-</Grid>
-
-<Grid item xs={3} sm={1} className={classes.gridIcons}>
-<Typography variant="h3" color="inherit">
-  <FontAwesomeIcon icon={faLinkedinIn} />
-</Typography>
-</Grid>
-
-<Grid item xs={3} sm={1} className={classes.gridIcons}>
-<Typography variant="h3" color="inherit">
-  <FontAwesomeIcon icon={faTwitter} />
-</Typography>
-</Grid> */
-}
