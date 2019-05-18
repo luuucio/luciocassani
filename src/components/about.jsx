@@ -2,11 +2,17 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import AboutCard from "./aboutCard";
+import Image from "../resources/about.jpg";
 
 const styles = theme => ({
   background: {
     minHeight: "100vh",
-    backgroundColor: "rgb(0, 0, 50)"
+    //backgroundColor: "rgb(0, 0, 50)"
+    backgroundImage: `url(${Image})`,
+    backgroundAttachment: "local",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center"
   },
   grid: {
     display: "flex",

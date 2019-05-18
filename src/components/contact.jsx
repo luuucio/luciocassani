@@ -8,14 +8,24 @@ import {
   faGithub,
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "../resources/contact.jpg";
 
 const styles = theme => ({
   background: {
     display: "flex",
     height: "100vh",
-    backgroundColor: "rgb(0, 50, 0)",
-    color: "white"
+    // backgroundColor: "rgb(0, 50, 0)",
+    color: "white",
+
+    minHeight: "100vh",
+    //backgroundColor: "rgb(0, 0, 50)"
+    backgroundImage: `url(${Image})`,
+    backgroundAttachment: "local",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "right"
   },
+
   gridText: {
     display: "flex",
     justifyContent: "center",
@@ -24,7 +34,7 @@ const styles = theme => ({
   gridIcons: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "center"
   }
 });
 
@@ -42,14 +52,6 @@ const Contact = props => {
   return (
     <div className={classes.background} id="Contact">
       <Grid container>
-        <Grid container>
-          <Grid item xs={12} className={classes.gridText}>
-            <Typography variant="h3" color="inherit">
-              Contact me at:
-            </Typography>
-          </Grid>
-        </Grid>
-
         <Grid container className={classes.gridIcons}>
           <Grid />
 
@@ -58,7 +60,7 @@ const Contact = props => {
               key={channel.link}
               item
               xs={3}
-              sm={1}
+              sm={2}
               className={classes.gridIcons}
             >
               <IconButton
@@ -74,6 +76,8 @@ const Contact = props => {
 
           <Grid />
         </Grid>
+        <Grid container />
+        <Grid container />
       </Grid>
     </div>
   );
