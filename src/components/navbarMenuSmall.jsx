@@ -8,6 +8,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import { Link } from "react-scroll";
 
 const styles = theme => ({
   drawer: {
@@ -44,8 +45,19 @@ class NavbarMenuSmall extends Component {
         >
           <List className={classes.drawer}>
             {pages.map(page => (
-              <ListItem key={page.name} component="a" href={`#${page.name}`}>
-                <ListItemText>{page.name}</ListItemText>
+              <ListItem key={page.name}>
+                {/* <ListItemText>{page.name}</ListItemText> */}
+                <Link
+                  key={page.name}
+                  activeClass="active"
+                  to={page.name}
+                  spy={true}
+                  smooth="easeOutQuart"
+                  offset={0}
+                  duration={500}
+                >
+                  <ListItemText>{page.name}</ListItemText>
+                </Link>
               </ListItem>
             ))}
           </List>
