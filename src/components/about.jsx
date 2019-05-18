@@ -12,7 +12,8 @@ const styles = theme => ({
     display: "flex",
     width: "80vw",
     justifyContent: "center",
-    marginTop: "10em"
+    marginTop: "10em",
+    alignItems: "flex-start"
   }
 });
 

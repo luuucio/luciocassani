@@ -1,6 +1,13 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, IconButton, Link } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedinIn,
+  faGithub,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
 
 const styles = theme => ({
   background: {
@@ -21,25 +28,51 @@ const styles = theme => ({
   }
 });
 
+//const channels = [faLinkedinIn, faEnvelope, faGithub, faTwitter];
+const channels = [
+  { icon: faLinkedinIn, link: "https://www.linkedin.com/in/luciocassani/" },
+  { icon: faEnvelope, link: "mailto:info@luciocassani.it" },
+  { icon: faGithub, link: "https://github.com/luuucio" },
+  { icon: faTwitter, link: "https://twitter.com/luuucioc" }
+];
+
 const Contact = props => {
   const { classes } = props;
+
   return (
     <div className={classes.background} id="Contact">
       <Grid container>
         <Grid container>
           <Grid item xs={12} className={classes.gridText}>
-            <Typography variant="h4" color="inherit">
-              Contacts
+            <Typography variant="h3" color="inherit">
+              Contact me at:
             </Typography>
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item xs={12} className={classes.gridIcons}>
-            <Typography variant="h4" color="inherit">
-              Contacts
-            </Typography>
-          </Grid>
+        <Grid container className={classes.gridIcons}>
+          <Grid />
+
+          {channels.map(channel => (
+            <Grid
+              key={channel.icon}
+              item
+              xs={3}
+              sm={1}
+              className={classes.gridIcons}
+            >
+              <IconButton
+                href={channel.link}
+                target="_blank"
+                variant="h3"
+                color="inherit"
+              >
+                <FontAwesomeIcon icon={channel.icon} size="3x" />
+              </IconButton>
+            </Grid>
+          ))}
+
+          <Grid />
         </Grid>
       </Grid>
     </div>
@@ -47,3 +80,23 @@ const Contact = props => {
 };
 
 export default withStyles(styles)(Contact);
+
+{
+  /* <Grid item xs={3} sm={1} className={classes.gridIcons}>
+<Typography variant="h3" color="inherit">
+  <FontAwesomeIcon icon={faEnvelope} />
+</Typography>
+</Grid>
+
+<Grid item xs={3} sm={1} className={classes.gridIcons}>
+<Typography variant="h3" color="inherit">
+  <FontAwesomeIcon icon={faLinkedinIn} />
+</Typography>
+</Grid>
+
+<Grid item xs={3} sm={1} className={classes.gridIcons}>
+<Typography variant="h3" color="inherit">
+  <FontAwesomeIcon icon={faTwitter} />
+</Typography>
+</Grid> */
+}
