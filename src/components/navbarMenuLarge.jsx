@@ -1,16 +1,14 @@
 import React from "react";
-import { Hidden, Button } from "@material-ui/core";
+import { Hidden, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 const styles = theme => ({
-  button: {
-    scrollBehavior: "smooth"
+  menuButtons: {
+    marginRight: "1em",
+    cursor: "pointer"
   }
 });
-
-const scrollToRef = reference =>
-  window.scrollTo(0, reference.current.offsetTop);
 
 const NavbarMenuLarge = props => {
   const { pages, classes } = props;
@@ -33,10 +31,16 @@ const NavbarMenuLarge = props => {
           to={page.name}
           spy={true}
           smooth="easeOutQuart"
-          offset={-70}
+          offset={0}
           duration={500}
         >
-          {page.name}
+          <Typography
+            color="inherit"
+            variant="subtitle1"
+            className={classes.menuButtons}
+          >
+            {page.name}
+          </Typography>
         </Link>
       ))}
       <span style={{ marginRight: "5em" }} />
