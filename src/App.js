@@ -12,19 +12,20 @@ const styles = theme => ({
 });
 
 class App extends Component {
-  pages = {
-    Home: "Home",
-    About: "About",
-    Contact: "Contact"
-  };
+  pages = [
+    { name: "Home", component: Home, reference: React.createRef() },
+    { name: "About", component: About, reference: React.createRef() },
+    { name: "Contact", component: Contact, reference: React.createRef() }
+  ];
   render() {
     const classes = this.props;
     return (
       <div>
         <Navbar pages={this.pages} title="Lucio Cassani" />
-        <Home />
-        <About />
-        <Contact />
+
+        {this.pages.map(Page => (
+          <Page.component reference={Page.reference} key={Page.name} />
+        ))}
       </div>
     );
   }

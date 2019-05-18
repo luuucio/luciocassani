@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import AboutCard from "./aboutCard";
@@ -48,28 +48,34 @@ const cards = [
   }
 ];
 
-const About = props => {
-  const { classes } = props;
-  return (
-    <div className={classes.background} id="About">
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          flex: 1,
-          justifyContent: "center"
-        }}
-      >
-        <Grid container spacing={24} color="inherit" className={classes.grid}>
-          {cards.map(item => (
-            <Grid key={item["logo"]} item sm={3} xs={6}>
-              <AboutCard card={item} />
-            </Grid>
-          ))}
-        </Grid>
+class About extends Component {
+  constructor(props) {
+    super(props);
+    this.reference = this.props.reference;
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.background} ref={this.reference}>
+        <div
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            flex: 1,
+            justifyContent: "center"
+          }}
+        >
+          <Grid container spacing={24} color="inherit" className={classes.grid}>
+            {cards.map(item => (
+              <Grid key={item["logo"]} item sm={3} xs={6}>
+                <AboutCard card={item} />
+              </Grid>
+            ))}
+          </Grid>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default withStyles(styles)(About);

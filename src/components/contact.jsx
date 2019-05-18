@@ -55,7 +55,7 @@ const Contact = props => {
 
           {channels.map(channel => (
             <Grid
-              key={channel.icon}
+              key={channel.link}
               item
               xs={3}
               sm={1}
