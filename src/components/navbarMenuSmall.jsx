@@ -43,9 +43,9 @@ class NavbarMenuSmall extends Component {
           anchor="right"
         >
           <List className={classes.drawer}>
-            {Object.keys(pages).map(page => (
-              <ListItem key={page} component="a" href={`#${page}`}>
-                <ListItemText>{page}</ListItemText>
+            {pages.map(page => (
+              <ListItem key={page.name} component="a" href={`#${page.name}`}>
+                <ListItemText>{page.name}</ListItemText>
               </ListItem>
             ))}
           </List>
