@@ -14,7 +14,7 @@ const styles = theme => ({
 class App extends Component {
   pages = [
     { name: "Home", component: Home, reference: React.createRef() },
-    { name: "About", component: About, reference: React.createRef() },
+    { name: "Tools", component: About, reference: React.createRef() },
     { name: "Contact", component: Contact, reference: React.createRef() }
   ];
   render() {

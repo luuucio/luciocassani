@@ -57,7 +57,7 @@ const cards = [
 const About = props => {
   const { classes } = props;
   return (
-    <div className={classes.background} id="About">
+    <div className={classes.background} id="Tools">
       <div
         style={{
           minHeight: "100vh",
@@ -68,7 +68,7 @@ const About = props => {
       >
         <Grid container spacing={24} color="inherit" className={classes.grid}>
           {cards.map(item => (
-            <Grid key={item["logo"]} item sm={3} xs={6}>
+            <Grid key={item["logo"]} item sm={3} xs={12}>
               <AboutCard card={item} />
             </Grid>
           ))}
