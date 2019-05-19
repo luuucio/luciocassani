@@ -5,30 +5,23 @@ import Home from "./components/home";
 import About from "./components/about";
 import Contact from "./components/contact";
 
-import { withStyles } from "@material-ui/core/styles";
-
-const styles = theme => ({
-  root: {}
-});
-
 class App extends Component {
   pages = [
-    { name: "Home", component: Home, reference: React.createRef() },
-    { name: "Tools", component: About, reference: React.createRef() },
-    { name: "Contact", component: Contact, reference: React.createRef() }
+    { name: "Home", component: Home },
+    { name: "Tools", component: About },
+    { name: "Contact", component: Contact }
   ];
   render() {
-    const classes = this.props;
     return (
       <div>
         <Navbar pages={this.pages} title="Lucio Cassani" />
 
         {this.pages.map(Page => (
-          <Page.component reference={Page.reference} key={Page.name} />
+          <Page.component key={Page.name} />
         ))}
       </div>
     );
   }
 }
 
-export default withStyles(styles)(App);
+export default App;

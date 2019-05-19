@@ -25,12 +25,14 @@ class AboutCard extends Component {
     isCardOpen: false
   };
 
+  // Mobile version: the cards expand touching the display
   handleExpandClick = () => {
     this.setState({
       isCardOpen: !this.state.isCardOpen
     });
   };
 
+  // Desktop version: the cards expand hovering on mouse
   handleMouseInCard = param => {
     this.setState({
       isCardOpen: param
@@ -48,10 +50,10 @@ class AboutCard extends Component {
         >
           <CardContent>
             <Typography variant="h4" align="center">
-              {card["logo"]}
+              {card.logo}
             </Typography>
             <Typography align="center" variant="subtitle1">
-              {card["name"]}
+              {card.name}
             </Typography>
           </CardContent>
           <CardActions disableActionSpacing={true}>
@@ -67,7 +69,7 @@ class AboutCard extends Component {
             <CardContent>
               <Typography paragraph>{card.description}</Typography>
               <Typography paragraph>
-                <Link href={card["link"]} target="_blank">
+                <Link href={card.link} target="_blank" rel="noreferrer">
                   Learn more
                 </Link>
               </Typography>

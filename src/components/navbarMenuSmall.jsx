@@ -5,14 +5,20 @@ import {
   SwipeableDrawer,
   List,
   ListItem,
-  ListItemText
+  Typography
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-scroll";
 
 const styles = theme => ({
-  drawer: {
+  drawerList: {
     paddingTop: 80
+  },
+  drawer: {
+    backgroundColor: "rgb(0,0,0)"
+  },
+  drawerText: {
+    color: "white"
   }
 });
 
@@ -42,11 +48,11 @@ class NavbarMenuSmall extends Component {
           onClose={() => this.handleDrawer(false)}
           onOpen={() => this.handleDrawer(true)}
           anchor="right"
+          classes={{ paper: classes.drawer }}
         >
-          <List className={classes.drawer}>
+          <List className={classes.drawerList}>
             {pages.map(page => (
               <ListItem key={page.name}>
-                {/* <ListItemText>{page.name}</ListItemText> */}
                 <Link
                   key={page.name}
                   activeClass="active"
@@ -56,7 +62,9 @@ class NavbarMenuSmall extends Component {
                   offset={0}
                   duration={500}
                 >
-                  <ListItemText>{page.name}</ListItemText>
+                  <Typography className={classes.drawerText}>
+                    {page.name}
+                  </Typography>
                 </Link>
               </ListItem>
             ))}

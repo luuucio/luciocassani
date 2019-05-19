@@ -15,16 +15,6 @@ const NavbarMenuLarge = props => {
   return (
     <Hidden only={["xs"]}>
       {pages.map(page => (
-        // <Button
-        //   key={page.name}
-        //   color="inherit"
-        //   // href={`#${page.reference}`}
-        //   onClick={() => scrollToRef(page.reference)}
-        //   size="large"
-        //   className={classes.button}
-        // >
-        //   {page.name}
-        // </Button>
         <Link
           key={page.name}
           activeClass="active"

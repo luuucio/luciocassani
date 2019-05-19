@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography, Grid, IconButton } from "@material-ui/core";
+import { Grid, IconButton } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -13,12 +13,8 @@ import Image from "../resources/contact.jpg";
 const styles = theme => ({
   background: {
     display: "flex",
-    height: "100vh",
-    // backgroundColor: "rgb(0, 50, 0)",
     color: "white",
-
     minHeight: "100vh",
-    //backgroundColor: "rgb(0, 0, 50)"
     backgroundImage: `url(${Image})`,
     backgroundAttachment: "local",
     backgroundRepeat: "no-repeat",
@@ -26,19 +22,13 @@ const styles = theme => ({
     backgroundPosition: "center"
   },
 
-  gridText: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  gridIcons: {
+  grid: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
   }
 });
 
-//const channels = [faLinkedinIn, faEnvelope, faGithub, faTwitter];
 const channels = [
   { icon: faLinkedinIn, link: "https://www.linkedin.com/in/luciocassani/" },
   { icon: faEnvelope, link: "mailto:info@luciocassani.it" },
@@ -52,7 +42,7 @@ const Contact = props => {
   return (
     <div className={classes.background} id="Contact">
       <Grid container>
-        <Grid container className={classes.gridIcons}>
+        <Grid container className={classes.grid}>
           <Grid />
 
           {channels.map(channel => (
@@ -61,11 +51,12 @@ const Contact = props => {
               item
               xs={3}
               sm={2}
-              className={classes.gridIcons}
+              className={classes.grid}
             >
               <IconButton
                 href={channel.link}
                 target="_blank"
+                rel="noreferrer"
                 variant="h3"
                 color="inherit"
               >

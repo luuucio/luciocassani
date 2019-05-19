@@ -35,8 +35,10 @@ class Home extends Component {
     const { showText } = this.state;
     return (
       <div className={classes.background} id="Home">
+        {/* Show the animated text after the component mount */}
+
         {showText && (
-          <Zoom in timeout={2000}>
+          <Zoom in timeout={2500}>
             <Typography variant="h3" className={classes.headline}>
               Software developer
             </Typography>
