@@ -30,10 +30,14 @@ const styles = theme => ({
 });
 
 const channels = [
-  { icon: faLinkedinIn, link: "https://www.linkedin.com/in/luciocassani/" },
-  { icon: faEnvelope, link: "mailto:info@luciocassani.it" },
-  { icon: faGithub, link: "https://github.com/luuucio" },
-  { icon: faTwitter, link: "https://twitter.com/luuucioc" }
+  {
+    name: "LinkedIn",
+    icon: faLinkedinIn,
+    link: "https://www.linkedin.com/in/luciocassani/"
+  },
+  { name: "Email", icon: faEnvelope, link: "mailto:info@luciocassani.it" },
+  { name: "Github", icon: faGithub, link: "https://github.com/luuucio" },
+  { name: "Twitter", icon: faTwitter, link: "https://twitter.com/luuucioc" }
 ];
 
 const Contact = props => {
@@ -59,6 +63,7 @@ const Contact = props => {
                 rel="noreferrer"
                 variant="h3"
                 color="inherit"
+                aria-label={channel.name}
               >
                 <FontAwesomeIcon icon={channel.icon} size="3x" />
               </IconButton>

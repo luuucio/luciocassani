@@ -39,6 +39,7 @@ class NavbarMenuSmall extends Component {
         <IconButton
           color="inherit"
           onClick={() => this.handleDrawer(!isDrawerOpen)}
+          aria-label="Menu"
         >
           <MenuIcon />
         </IconButton>

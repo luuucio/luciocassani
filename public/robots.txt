@@ -1,0 +1,7 @@
+# 01
+User-agent: Googlebot
+Disallow: /resources/
+
+# 02
+User-agent: *
+Allow: /
