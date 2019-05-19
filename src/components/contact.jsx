@@ -23,7 +23,7 @@ const styles = theme => ({
     backgroundAttachment: "local",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    backgroundPosition: "right"
+    backgroundPosition: "center"
   },
 
   gridText: {
